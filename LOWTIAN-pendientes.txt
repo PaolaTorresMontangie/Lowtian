@@ -1,0 +1,74 @@
+LOWTIAN
+
+
+*** TO DO LIST
+
+* chequear espacios Figma y realidad
+* hover de a (barra de navegaion) hacer algo? quizas un glow o linea
+* centar navbar?
+* navbar hamburguesa llevar a la derecha
+* agrandar texto de marca (falta clase)
+* utilizar mixins en base a BA
+* chequear anidado de custom-navbar en css y reutilizacion (pendiente en mi marca)
+
+
+
+CONSULTAS CLIENTE
+* como quiere el hover y link active de navbar en desktop y en mobile?
+* quiere blur cuando se despliegue menu hamburguesa?
+
+
+
+* modificar cabecera (favicon, opengraph,title)
+* ojo con alts
+
+cambiar todo lo que sea px a rem
+reutilizar mixins para fuentes
+
+herotitulo le comenté el with porque sino, no entraba el texto con el size elegido
+la imagen debe ir por delante
+
+    //leading-trim: NONE; en hero-subtitulo?
+
+
+
+* COMO HACER LOS GRADIENTS
+https://www.google.com/search?q=html+y+css+imagen+de+hero+con+varios+circulos+con+gradients&oq=html+y+css+imagen+de+hero+con+varios+circulos+con+gradients&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABjvBTIKCAIQABiABBiiBDIHCAMQABjvBTIHCAQQABjvBdIBCTIxODEyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8
+
+**** MENSAJE PARA LETI
+
+Hola Leti. Quería decirte que me encantó conocerte y si no te molesta, me gustaría seguir en contacto con vos. Se quie debo actualizar en lo tecnológico para volver a trabajar freelance pero estoy convencida de que mi experiencia de 15 años en el rubro de sistemas más mis años como emprendedora (donde el rol de vendedora era muy importante) serán un gran activo y me ayudarán a volver al ruedo nuevamente. Me gustaría poder mostrarme los proyectos en los que voy trabajando y si tenés ganas, hacerme una devolución.*
+
+
+
+
+/*
+en esta fase 1, único html de inicio con links a otras páginas o secciones dentro de la misma página. 
+Barra de navegación con links "Inicio, Remeras, Buzos, Pantalones, Zapatillas" responsive (se adapta a distintos dispositivos).
+Diseño completo que se adapta a distintos dispositivos. Imagen de fondo y textos cambian según el dispositivo.
+*/
+
+/*
+landing page / home, página única con navbar de bootstrap responsive (osea,
+que se adapta a distintos dispositivos) en letras blancas, fondo oscuro, tipografias blancas, 
+degrades de gris a negro/transparente en varias posiciones.
+algunos textos y linea en la parte inferior.
+
+En la versión Mobile: navbar hamburguesa a la izquierda
+con botón blanco, logo de LOWTIAN en letras centrado en blanco, icono carrito de compras blanco 
+a la izquierda, campera blanca que contrasta con el fondo en el medio, texto blanco grande "NIKE" a
+la derecha y arriba de la campera, texto "WIND BREAKER" abajo de la campera.
+Varios gradients de color blanco a negro/transparente
+Parte inferior, linea vertical en blanco a la izquierda y texto volteado 90% en blanco "NEW IN".
+
+En la veresión Desktop: 
+logo de LOWTIAN en letras a la izquierda, menu con links "Inicio, Remeras, Buzos, Pantalones, Zapatillas" en el centro,
+a la izquierda superior icono blanco de "perfil" e ícono blanco de "carrito de compras".
+campera blanca que contrasta con el fondo a la derecha, texto blanco grande
+"NIKE BALACLAVA" arriba y por detrás de la campera, texto descriptivo del producto en
+blanco y letras más pequeñas, precio del producto en blanco y botón CTA (llamado
+a la acción) con texto "Añadir al carrito" en blanco, con fondo negro y borde blanco fino cuadrado 
+sin bordes redondeados.
+Varios gradients de color blanco a negro/transparente
+Parte inferior, linea vertical en blanco a la izquierda y texto volteado 90% en blanco "NEW IN".
+*/

@@ -1,0 +1,66 @@
+@import './utilities/_extends';
+@import './utilities/_variables';
+@import './utilities/_mixins';
+
+@import './layouts/_header';
+@import './layouts/_main';
+@import './layouts/_footer';
+
+
+/* media querys para tablets y celulares --------------------------------------------- */
+
+/* responsive tablet */
+@media (max-width: $tamanioTablet) {
+
+    body, p {
+        font-size: 1.2rem;
+    }
+
+    /* cambio la imagen */
+    .header{    
+        /* Url debo cambiar imagen */
+        background-position-x: 100%;
+        background-position-y: 100%;        
+    }
+
+    .hero__title {
+        font-size: 2.3rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.05rem;
+    }
+  
+    .hero__cta {
+         /* achico el font-size */
+    }        
+
+    /* bootstrap navbar personalizada ------------------- */
+    .custom-navbar a {
+        // no puedo usar include porque necesito important
+        //@include font($fontPrimary,1em,450);
+        font-size: 1em !important;
+        font-weight: 450 !important;
+    }
+
+}
+
+
+/* responsive mobile */
+@media (max-width: $tamanioMobile) {
+
+    body, p {
+        font-size: 1rem;
+    }
+
+    .hero__title {
+        /* achico el font-size y agrando espacio para el texto */
+        font-size: 1.8rem;
+        max-width: 70%;
+    }
+    
+    .hero__cta {
+        /* achico el font-size */
+        font-size: 0.8rem;
+    }    
+}

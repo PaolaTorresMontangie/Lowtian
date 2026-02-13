@@ -1,0 +1,62 @@
+
+elipse 1 #E5DFCC (marca arriba izq)
+width: 609.0185546875;
+height: 609.0185546875;
+top: -136.11px;
+left: -130.64px;
+angle: 0 deg;
+opacity: 1;
+mix-blend-mode: Más claro;
+background: #E5DFCC;  229,223,204 = #E5DFCC
+backdrop-filter: blur(370.1805419921875px)
+
+elipse 6 #E5DFCC (iconos arriba der)
+width: 429.2480163574219;
+height: 429.2480163574219;
+top: -226px;
+left: 984.67px;
+angle: 0 deg;
+opacity: 0.57;
+mix-blend-mode: Más claro;
+background: #E5DFCC;
+backdrop-filter: blur(203.80108642578125px)
+
+
+elipse 3 #000000 (abajo izq)
+width: 539.3115844726562;
+height: 539.3115844726562;
+top: 412.74px;
+left: -182px;
+angle: 0 deg;
+opacity: 1;
+background: #000000;
+backdrop-filter: blur(370.1805419921875px)
+
+
+elipse 4 #3C3C3C (arriba centro dereca detras de titulo)
+width: 539.3115844726562;
+height: 539.3115844726562;
+top: -66.41px;
+left: 559.09px;
+angle: 0 deg;
+opacity: 1;
+background: #3C3C3C;
+backdrop-filter: blur(370.1805419921875px)
+
+elipse 5 #7B7B7B (abajo centrado, a izquierda del producto)
+width: 539.3115844726562;
+height: 539.3115844726562;
+top: 487.95px;
+left: 397.67px;
+angle: 0 deg;
+opacity: 1;
+background: #7B7B7B;
+backdrop-filter: blur(370.1805419921875px)
+
+rectangulo 1 (en la base color negro)
+width: 1284;
+height: 199;
+angle: 0 deg;
+opacity: 1;
+top: 635px;
+background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);

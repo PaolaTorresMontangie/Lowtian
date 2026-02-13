@@ -36,13 +36,49 @@
     }        
 
     /* bootstrap navbar personalizada ------------------- */
-    .custom-navbar a {
-        // no puedo usar include porque necesito important
-        //@include font($fontPrimary,1em,450);
-        font-size: 1em !important;
-        font-weight: 450 !important;
-    }
+    .custom-navbar {
+        // a {
+        //     font-size: 0.8rem;
+        //     font-weight: 350 !important;
+        //       color: yellow !important;             
 
+        //     &:hover {
+        //         text-decoration: none;
+        //         font-weight: 600 !important;    
+        //         color: blue !important;             
+        //     }
+        // }        
+    
+        /* logo se acomoda al centro en tablet y mobile */
+        .navbar-brand {
+        margin-right: auto;
+        margin-left: auto;
+        }
+
+        /* navbar hamburguesa desplegada con blur */
+        .navbar-collapse {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 1rem;        
+            /* transparencia */
+            background-color: rgba(0, 0, 0, 0.555);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); /* Safari */
+        } 
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        /* pone las rayitas del menu hamburguesa en blanco */
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+    }
+  
 }
 
 

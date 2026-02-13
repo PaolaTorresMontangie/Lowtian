@@ -1,35 +1,29 @@
 LOWTIAN
 
-
-*** TO DO LIST
-
-* chequear espacios Figma y realidad
-* hover de a (barra de navegaion) hacer algo? quizas un glow o linea
-* centar navbar?
-* navbar hamburguesa llevar a la derecha
-* agrandar texto de marca (falta clase)
-* utilizar mixins en base a BA
-* chequear anidado de custom-navbar en css y reutilizacion (pendiente en mi marca)
-
-
-
 CONSULTAS CLIENTE
 * como quiere el hover y link active de navbar en desktop y en mobile?
 * quiere blur cuando se despliegue menu hamburguesa?
+* para tablet alguna definición? que imagen va de fondo? será fondo hamburguesa 
+
+*** TO DO LIST
+
+* tamaño fijo del hero?
+* todo el hero como grid? 
+* que la imagen del producto no quede volando..
+* github porque no sube imagen (cambiar nombre imagen)
 
 
+* desplegable menu hamburguesa segun definicion, ahora que el hover funcione y fondo que cubra lo demas
+* todo lo de mobile
+* navbar hamburguesa llevar a la derecha
 
+* utilizar mixins en base a BA
+* chequear anidado de custom-navbar en css y reutilizacion (pendiente en mi marca)
+* chequear espacios Figma y realidad
 * modificar cabecera (favicon, opengraph,title)
 * ojo con alts
 
-cambiar todo lo que sea px a rem
-reutilizar mixins para fuentes
-
-herotitulo le comenté el with porque sino, no entraba el texto con el size elegido
-la imagen debe ir por delante
-
-    //leading-trim: NONE; en hero-subtitulo?
-
+* cambiar todo lo que sea px a rem
 
 
 * COMO HACER LOS GRADIENTS

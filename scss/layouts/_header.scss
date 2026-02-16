@@ -9,9 +9,14 @@
 
 body {
     font-family: $fontPrimary;
-    color: $color-text-main;    
-    background-color: $color-bg-general;
+    color: $color-text-main;
     scroll-behavior: smooth;
+
+    background-color: $color-bg-general;
+    /*
+    background: #E5DFCC;
+    background: radial-gradient(circle, rgba(229, 223, 204, 1) 0%, rgba(22, 22, 22, 1) 100%);
+*/
 }
 
 p {    
@@ -40,26 +45,43 @@ a {
 
 
 /* header ********************/
-
+// capas 0 gradients, 1 contenido hero, 2 campera y texto 
 .header {    
     // para degrades de fondo
     position: relative;
     overflow: hidden;         
 }
 
-/* contenedor para titulos y botones hero */
+/* grid principal */
 .hero {
     position: relative;
-    min-height: 100vh;
-    max-height: 840px; // CHEQUEAR
-    overflow: hidden;    
+    width: 100%;
+    overflow: hidden;  
+    
+    display: grid;
+
+    /* columnas texto - imagen - aire derecho */
+    grid-template-columns: 
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 0.5fr);
+
+    //grid-template-columns: 40% 40% 20%;
+    /* filas */
+    grid-template-rows: auto 1fr auto;
+    
+    padding: 0 clamp(2rem, 6vw, 6rem);    
+
+    /* altura controlada */
+    height: min(100vh, 1100px);
+
+    /* limite ancho tipo marcas grandes */
+    max-width: 1660px;
+    margin: 0 auto;
+     
+    //background-color: pink;
 }
 
-/* forma y posicion del nucleo izquierda y arriba */
-/* primer color nucleo luz*/
-/* caida y tamanio del blur */
-/* residuo de luz */
-/* desaparicion total */
 
 /* efectos de fondo del hero */
 .hero::after {
@@ -96,7 +118,6 @@ a {
             rgba(0, 0, 0, 0.3) 15%,
             transparent 30%            
         ),    
-
         
         /*  PRODUCTO elipse 5 abajo centro */
         radial-gradient(
@@ -125,60 +146,80 @@ a {
 
         /* fondo base */
         $color-bg-general;
+
+/* forma y posicion del nucleo izquierda y arriba */
+/* primer color nucleo luz*/
+/* caida y tamanio del blur */
+/* residuo de luz */
+/* desaparicion total */        
 }
 
+/* columna izquierda contenido */
 .hero__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100vh;
-    max-height: 80%;
-    row-gap: 1.5rem;
-    position: relative;
-    /* espacio para navbar fija */
-    margin-top: 60px;
-    margin-left: 4rem;
-    z-index: 1;
-    // 0 gradients, 1 contenido hero, 2 campera y texto girado      
+  grid-column: 1;
+  grid-row: 2;
 
-    //background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+            //max-width: 640px;
+
+  //align-self: center;
+    align-self: start;
+    margin-top: clamp(2rem, 15vh, 10rem);
+
+  z-index: 1;
+
+  //background-color: violet;
 }
 
-.hero__title {    
+/* columna derecha producto */
+.hero__media {
+    grid-column: 2;
+    grid-row: 2 / 4; /* ocupa centro y base */
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    }
+
+.hero__product {
+    //height: 75%;
+    height: 80%;
+    width: auto;
+
+    z-index: 2;
+}
+
+/* titulo grande */
+.hero__title {
     color: $color-text-main;
     font-weight: 700; // Bold    
 
     // para superponer imagen y texto
-    font-size: clamp(3.5rem, 9.8vw, 11rem);
+    font-size: clamp(3.5rem, 9.5vw, 10rem);
+    line-height: 1;
 
-    white-space: nowrap;
-    margin-top: 3rem;
+    white-space: nowrap; // que no baje a otra linea
+    margin-top: 0;
     margin-bottom: 0;
-    //background-color: aqua;
-}
 
-.hero__product {
-    position: absolute;
-    top: 50%;
-    right:-0%;
-    transform: translateY(-40%);
-    width: 90vw;
-    min-width: 720px;
-    max-width: 1300px;
-    z-index: 2;    
+    //background-color: fuchsia;
 }
 
 .hero__subtitle {
     color: $color-text-main;
-    //font-size: 19.45px;    
-    font-size: 1rem;
+    //font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+
     font-weight: 500; // Medium
     width: 470px;
-    margin-top: 1.6rem;
+    margin-top: 4rem;
     margin-left: 2.5rem;
     margin-bottom: 0;
     height: auto;
-    // background-color: yellow;
+     //background-color: blue;
 }
 
 .hero__price {
@@ -195,6 +236,7 @@ a {
     font-size: 0.8rem;   
     //font-size: 15.08px;   
     font-weight: 400; // SemiBold;
+    width: fit-content;
     margin-left: 2.5rem;     
     padding: 0.43rem 1.25rem; //padding: 7px 20px;  /* espacio dentro del boton, alto ancho */
 }
@@ -205,34 +247,43 @@ a {
     transform: translateY(-1px);  
 }
 
+/* texto vertical mas linea */
+.hero__side-label {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
 
-.side__label {
-    position: absolute;
-    bottom: 0;          // linea llega hast el fondo
     display: flex;
-    align-items: center; 
-    gap: 0.3rem;
-    margin-left: 2.5rem;
+    flex-direction: row;
+    align-items: flex-end;
+   // gap: 0.4rem;
+   gap: clamp(0.3rem, 0.5vw, 0.8rem);
     z-index: 2;
-    // 0 gradients, 1 contenido hero, 2 campera y texto girado
 }
 
-/* linea de texto a la derecha del texto */
-.side__label::after {
+/* linea a la derecha del texto */
+.hero__side-label::after {
     content: "";
     width: 1.5px;
-    height: 200px;
+    height: clamp(4rem, 10vw, 12rem);
     background-color: $color-text-main;   
 }
 
-.side__text {
+/* texto */
+.hero__side-text {
+    display: block;
     writing-mode: vertical-lr;
     text-orientation: mixed;
     transform: rotate(180deg);
     letter-spacing: 0.2em;
-    font-size: 0.8rem;
+    //font-size: 0.8rem;
+    font-size: clamp(0.7rem, 1.5vh, 1.5rem);
     text-transform: uppercase;
-    padding-top: 7rem;            // distancia hasta la base, esta invertido
+    //padding-top: 3rem;      
+
+    // distancia hasta la base, esta invertido
+    padding-top: clamp(2rem, 6vh, 5rem);
+
     // background-color: orange;
 }
 
@@ -248,12 +299,18 @@ a {
     //     background-color: brown !important;
     // }
 
+    // alinea con el hero
+    .navbar .container-fluid {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
     /* logo de texto */
     .navbar-brand {
         font-size: 18px !important;
         font-weight: 600 !important;
         letter-spacing: 7px !important;
-        margin-left: 2rem;
+        //margin-left: -3rem;
     }    
 
     a {
@@ -272,23 +329,14 @@ a {
     .nav-link[aria-current="page"] {
         color: $color-text-main !important;
         font-weight: 600 !important;         
-    }
-    
-    // .custom-navbar-icons {
-    //     display: flex;
-    //     flex-direction: row;
-    //     gap: 2rem;
-    //     margin-right: 4rem;
-    //     background-color: bisque !important;
-    // // d-flex d-row gap-2 me-4
-    // }
+    }    
 }
 
+// contenedor para los dos iconos
 .nav-icons {
     gap: 1rem;
     align-items: center;
-    margin-right: 1rem;
-    //margin-left: auto; /* empuja a la derecha */
+    margin-left: auto; /* empuja a la derecha */
 }
 
 .nav-icon {

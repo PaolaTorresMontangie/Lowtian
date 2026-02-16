@@ -6,11 +6,14 @@ CONSULTAS CLIENTE
 * para tablet alguna definición? que imagen va de fondo? será fondo hamburguesa 
 
 *** TO DO LIST
+Figma 1280x832		
+pantalla 1 1366x768   1366x641    hero 770 -> 641
+pantalla 2 1920*1080  1920x953    hero 960 -> 953
 
-* tamaño fijo del hero?
-* todo el hero como grid? 
-* que la imagen del producto no quede volando..
-* github porque no sube imagen (cambiar nombre imagen)
+window.innerWidth
+document.querySelector('.hero').offsetHeight
+
+* acomodar iconos 
 
 
 * desplegable menu hamburguesa segun definicion, ahora que el hover funcione y fondo que cubra lo demas

@@ -7,7 +7,82 @@
 @import './layouts/_footer';
 
 
+
+
 /* media querys para tablets y celulares --------------------------------------------- */
+
+/* notebook comun (1366x641) */
+
+@media (min-width: 1300px) and (max-width: 1919px) {
+
+    .hero {
+        //height: 770px;
+        //height: min(100vh,953px);
+        background-color: brown;
+    }
+    /*
+    .hero__product {
+        height: 600px;
+        transform: translateX(-46%); // mueve la imagen
+    }
+    .hero__content {
+       // gap: 1.2rem;
+        margin-bottom: 270px; //baja la imagen
+    }
+    .hero__subtitle {
+        margin-top: 0;
+    }  
+
+    
+    .hero__side-label::after {
+        height: clamp(2rem, 10vw, 10rem);        
+    }
+
+    
+    .hero__side-text {
+        font-size: 0.6rem;
+        padding-top: 2.5rem;      // distancia hasta la base, esta invertido
+    }
+        */
+}
+
+
+/* Desktop grande (1920x953) */
+
+@media (min-width: 1820px) {
+    .hero {
+        //height: 960px;
+        //height: min(100vh,953px);
+        background-color: green;
+    }
+    /*
+    .hero__product {
+        //height: 880px;
+        height: 760px;
+        transform: translateX(-27%);
+    }
+    .hero__content {
+        gap: 3rem;       
+        margin-bottom: 300px;
+    }
+    .hero__subtitle {
+        margin-top: 2rem;
+    }  
+
+    .hero__side-label::after {
+        height: clamp(2rem, 8vw, 15rem);
+    }
+
+    .hero__side-text {
+        font-size: 0.8rem;        
+        padding-top: 4rem;   // distancia hasta la base, esta invertido
+    }
+*/
+}
+
+
+
+
 
 /* responsive tablet */
 @media (max-width: $tamanioTablet) {

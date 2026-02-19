@@ -1,5 +1,6 @@
 LOWTIAN
 
+***** SUBIR A GITHUB, ojo que ayer no pude
 
 * aclarar en el mail que el contenedor para que no se achique es el
 mismo sistema que usan marcan premium

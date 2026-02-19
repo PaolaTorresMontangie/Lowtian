@@ -1,19 +1,16 @@
 LOWTIAN
 
-***** SUBIR A GITHUB, ojo que ayer no pude
-
-* aclarar en el mail que el contenedor para que no se achique es el
-mismo sistema que usan marcan premium
-* cambiar la parte de fondo con gradient por fondo negro
-* aclarar que en tablet se dejo a proposito que se corte la imagen porque
-hacerle entrar haria perder impacto visual pero es el cliente quien debe
-decidir
-
-** enviar mail
 
 
-* gradient circulas body en desktop?
+
+
+* desktop muy anchos, posibilidad de agregar un after al header para que continuen 
+los grdients al borde, se ve bastante bien pero se ve raro
+el corte de la imagen del producto. 1) que el producto no se corte y "salga del hero"
+2) que el gradient del header sea mas oscuro para que se vea el corte pero no sea tan abrupto
 * gradient circular abajo quizas debajo del rectangulo
+
+
 
 * todo lo de mobile
 

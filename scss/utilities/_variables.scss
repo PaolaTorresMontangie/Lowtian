@@ -18,7 +18,7 @@ $color-text-inverse: #ffffff;
 =========================== */
 
 $layout-max-width: 1660px;
-$hero-max-height: 1100px;
+//$hero-max-height: 1100px;
 
 /* ===========================
    Breackpoints
@@ -39,6 +39,10 @@ Figma Desktop 1280x832
 pantalla 1 1366x768   1366x641    hero -> 641
 pantalla 2 1920*1080  1920x953    hero -> 953
 
+Monitores grandes:
+
+
+
 tablet portrait 768x834
 table landscape 1024x1180	
 
@@ -46,3 +50,9 @@ Figma Mobile 320x568
 */
 
 // capas 0 gradients, 1 contenido hero, 2 campera y texto, 3 navbar
+// orden de los valores en los gradients
+/* forma y posicion del nucleo izquierda y arriba */
+/* primer color nucleo luz*/
+/* caida y tamanio del blur */
+/* residuo de luz */
+/* desaparicion total */    

@@ -12,9 +12,7 @@ body {
     color: $color-text-main;
     scroll-behavior: smooth;
 
-    background-color: $color-bg-general;    
-    //background: #E5DFCC;
-    //background: radial-gradient(circle, rgba(229, 223, 204, 1) 0%, rgba(22, 22, 22, 1) 100%);
+    background-color: $color-bg-general;
 }
 
 p {    
@@ -44,15 +42,15 @@ a {
 .header {    
     // para degrades de fondo
     position: relative;
-    overflow: hidden;         
+    overflow: hidden;    
+    background-color: $color-bg-general;         
 }
+
 
 /* grid principal */
 .hero-desktop {
     position: relative;
-    width: 100%;
     overflow: hidden;  
-    
     display: grid;
 
     /* columnas texto - imagen - aire derecho */
@@ -66,9 +64,8 @@ a {
     
     padding: 0 clamp(2rem, 6vw, 6rem);    
 
-    /* altura controlada */
-    height: min(100vh, $hero-max-height);
-
+    min-height: 100vh;
+    width: 100%;      
     /* limite ancho tipo marcas grandes */
     max-width: $layout-max-width;
     margin: 0 auto;
@@ -79,7 +76,6 @@ a {
     content: "";
     position: absolute;
     inset: 0;
-    //inset: -40%;    
     z-index: 0;
     background:
 
@@ -135,14 +131,7 @@ a {
             rgba(0, 0, 0, 0) 35%
         ),        
 
-        /* fondo base */
-        $color-bg-general;
-
-/* forma y posicion del nucleo izquierda y arriba */
-/* primer color nucleo luz*/
-/* caida y tamanio del blur */
-/* residuo de luz */
-/* desaparicion total */        
+        $color-bg-general;   
 }
 
 /* columna izquierda contenido */

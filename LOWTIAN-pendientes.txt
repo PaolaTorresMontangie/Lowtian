@@ -1,7 +1,26 @@
 LOWTIAN
 
+imagen 224x331
+body 320*568
 
 
+
+* poner clamp en todos lados mobile
+* chequera posicion imagen y titulos
+* corregir gradients
+* achicar link hamburguesa
+* controlar tamaño brand hamburguesa
+* ver otros tamaños de cel
+* cambiar icono user por cart
+
+* ojo con alts
+* cambiar todo lo que sea px a rem
+* buscar colores con # y cambiarlos por variables
+* buscar clases huérfanas y no usadas
+
+* utilizar mixins en base a BA
+* chequear espacios Figma y realidad
+* modificar cabecera (favicon, opengraph,title)
 
 
 * desktop muy anchos, posibilidad de agregar un after al header para que continuen 
@@ -9,17 +28,6 @@ los grdients al borde, se ve bastante bien pero se ve raro
 el corte de la imagen del producto. 1) que el producto no se corte y "salga del hero"
 2) que el gradient del header sea mas oscuro para que se vea el corte pero no sea tan abrupto
 * gradient circular abajo quizas debajo del rectangulo
-
-
-
-* todo lo de mobile
-
-* utilizar mixins en base a BA
-* chequear espacios Figma y realidad
-* modificar cabecera (favicon, opengraph,title)
-* ojo con alts
-* cambiar todo lo que sea px a rem
-
 
 
 * COMO HACER LOS GRADIENTS

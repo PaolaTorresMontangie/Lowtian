@@ -137,8 +137,8 @@
             margin-left: auto !important;
         }
 
-        /* ocultar icono carrito */
-        .nav-cart {        
+        /* ocultar icono user */
+        .nav-user {        
             display: none;
         }
     }
@@ -152,37 +152,8 @@
 //@media (max-width: 767px) {
 @include mobile {    
 
-    .body {
-     //   background-color: $color-bg-general;           
-    }
+    /* esconde desktop y activo mobile */
+    .hero-desktop { display: none; }
+    .hero-mobile { display: flex; }
 
-    .hero-desktop {
-        display: none;
-    }
-
-/*
-    .hero-mobile {
-        position: relative;
-        width: 100%;
-        overflow: hidden;  
-        
-        display: grid;
-
-        grid-template-columns: 
-        minmax(0, 1fr)
-        minmax(0, 1fr)
-        minmax(0, 0.5fr);
-
-        grid-template-rows: auto 1fr auto;
-        
-        height: 100vh;
-        margin: 0 auto;
-        //background-color: orange;   
-    }   
-
-
-    .hero__content-top-mobile  {
-
-    }
-*/
 }

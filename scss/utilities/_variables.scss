@@ -1,12 +1,48 @@
-// dimensiones de dispositivos para diseño responsive
-$tamanioDesktop: 1440px;    // desktop
-$tamanioTablet: 768px;      // tablet
-$tamanioMobile: 390px;      // mobile
+/* ===========================
+   Fuentes
+=========================== */
 
 $fontPrimary: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
+/* ===========================
+   Colores
+=========================== */
 
-/* Base */
 $color-bg-general:  #161616;
 $color-text-main: #fff;      // Texto principal
 $color-text-inverse: #ffffff;
+
+
+/* ===========================
+   Layout
+=========================== */
+
+$layout-max-width: 1660px;
+$hero-max-height: 1100px;
+
+/* ===========================
+   Breackpoints
+=========================== */
+
+$bp-mobile: 767px;
+$bp-tablet-portrait-min: 768px;
+$bp-tablet-portrait-max: 1023px;
+$bp-tablet-landscape-min: 1024px;
+$bp-tablet-landscape-max: 1199px;
+$bp-lg: 991px; // Bootstrap lg breakpoint
+$bp-desktop: 1200px;
+
+
+
+/*
+Figma Desktop 1280x832		
+pantalla 1 1366x768   1366x641    hero -> 641
+pantalla 2 1920*1080  1920x953    hero -> 953
+
+tablet portrait 768x834
+table landscape 1024x1180	
+
+Figma Mobile 320x568
+*/
+
+// capas 0 gradients, 1 contenido hero, 2 campera y texto, 3 navbar

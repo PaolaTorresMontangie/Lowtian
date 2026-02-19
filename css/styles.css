@@ -1,4 +1,30 @@
-/* Base */
+@charset "UTF-8";
+/* ===========================
+   Fuentes
+=========================== */
+/* ===========================
+   Colores
+=========================== */
+/* ===========================
+   Layout
+=========================== */
+/* ===========================
+   Breackpoints
+=========================== */
+/*
+Figma Desktop 1280x832		
+pantalla 1 1366x768   1366x641    hero -> 641
+pantalla 2 1920*1080  1920x953    hero -> 953
+
+tablet portrait 768x834
+table landscape 1024x1180	
+
+Figma Mobile 320x568
+*/
+/* ======================
+   Breakpoint Mixins
+====================== */
+/* Bootstrap lg-down */
 /****** header layout *****************************************/
 /* reset y generales ********************/
 * {
@@ -12,10 +38,6 @@ body {
   color: #fff;
   scroll-behavior: smooth;
   background-color: #161616;
-  /*
-      background: #E5DFCC;
-      background: radial-gradient(circle, rgba(229, 223, 204, 1) 0%, rgba(22, 22, 22, 1) 100%);
-  */
 }
 
 p {
@@ -28,7 +50,6 @@ a {
   color: #fff;
 }
 
-/* boton base */
 .btn {
   color: #fff;
   font-size: 1.2rem;
@@ -48,7 +69,7 @@ a {
 }
 
 /* grid principal */
-.hero {
+.hero-desktop {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -66,7 +87,7 @@ a {
 }
 
 /* efectos de fondo del hero */
-.hero::after {
+.hero-desktop::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -85,7 +106,7 @@ a {
   grid-row: 2;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2vh, 2rem);
   align-self: start;
   margin-top: clamp(2rem, 15vh, 10rem);
   z-index: 1;
@@ -110,7 +131,7 @@ a {
 .hero__title {
   color: #fff;
   font-weight: 700;
-  font-size: clamp(3.5rem, 9.5vw, 10rem);
+  font-size: clamp(5.5rem, 9.7vw, 10rem);
   line-height: 1;
   white-space: nowrap;
   margin-top: 0;
@@ -119,29 +140,26 @@ a {
 
 .hero__subtitle {
   color: #fff;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.3vw, 1.4rem);
   font-weight: 500;
-  width: 470px;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-left: 2.5rem;
   margin-bottom: 0;
-  height: auto;
 }
 
 .hero__price {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-weight: 500;
-  width: 138px;
-  height: auto;
   margin-left: 2.5rem;
 }
 
 .hero__cta {
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
   font-weight: 400;
   width: fit-content;
   margin-left: 2.5rem;
-  padding: 0.43rem 1.25rem;
+  /* espacio dentro del boton, alto ancho */
+  padding: clamp(0.35rem, 0.8vh, 1.6rem) clamp(1.5rem, 1.4vw, 2.6rem);
 }
 
 .hero__cta:hover {
@@ -160,9 +178,8 @@ a {
   align-items: flex-end;
   gap: clamp(0.3rem, 0.5vw, 0.8rem);
   z-index: 2;
+  /* linea a la derecha del texto */
 }
-
-/* linea a la derecha del texto */
 .hero__side-label::after {
   content: "";
   width: 1.5px;
@@ -176,8 +193,8 @@ a {
   writing-mode: vertical-lr;
   text-orientation: mixed;
   transform: rotate(180deg);
-  letter-spacing: 0.2em;
   font-size: clamp(0.7rem, 1.5vh, 1.5rem);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   padding-top: clamp(2rem, 6vh, 5rem);
 }
@@ -185,25 +202,29 @@ a {
 /* bootstrap navbar personalizada */
 .custom-navbar {
   color: #fff !important;
-  /* links a la derecha en hamburguesa */
-  text-align: right;
   position: relative;
+  z-index: 3 !important;
 }
-.custom-navbar .navbar .container-fluid {
+.custom-navbar .container {
   max-width: 1600px;
   margin: 0 auto;
+  padding-left: clamp(2rem, 3vw, 6rem);
+  padding-right: clamp(2rem, 3vw, 6rem);
 }
 .custom-navbar {
   /* logo de texto */
 }
 .custom-navbar .navbar-brand {
-  font-size: 18px !important;
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  letter-spacing: clamp(4px, 0.4vw, 8px);
   font-weight: 600 !important;
-  letter-spacing: 7px !important;
+}
+.custom-navbar {
+  /* links */
 }
 .custom-navbar a {
   color: #fff !important;
-  font-size: 0.8rem; /*0.8rem = 12.8 px*/
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
   font-weight: 350 !important;
 }
 .custom-navbar a:hover {
@@ -218,123 +239,97 @@ a {
   color: #fff !important;
   font-weight: 600 !important;
 }
-
-.nav-icons {
-  gap: 1rem;
-  align-items: center;
-  margin-left: auto; /* empuja a la derecha */
+.custom-navbar {
+  /* contenedor para los dos iconos */
 }
-
-.nav-icon {
+.custom-navbar .nav-icons {
+  margin-left: auto; /* empuja a la derecha */
+  display: flex;
+  gap: clamp(0.6rem, 1vw, 1.2rem);
+}
+.custom-navbar .nav-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
-
-.nav-icon:hover {
+.custom-navbar .nav-icon img {
+  width: clamp(18px, 1.3vw, 26px);
+  height: auto;
+}
+.custom-navbar .nav-icon:hover {
   opacity: 0.7;
   transform: translateY(-1px);
-}
-
-.nav-icon img {
-  width: 22px;
-  height: 22px;
 }
 
 /****** fin header layout *****************************************/
 /****** main layout *****************************************/
 /****** footer layout *****************************************/
-/* media querys para tablets y celulares --------------------------------------------- */
-/* notebook comun (1366x641) */
-@media (min-width: 1300px) and (max-width: 1919px) {
-  .hero {
-    background-color: brown;
-  }
-  /*
-  .hero__product {
-      height: 600px;
-      transform: translateX(-46%); // mueve la imagen
-  }
-  .hero__content {
-     // gap: 1.2rem;
-      margin-bottom: 270px; //baja la imagen
-  }
-  .hero__subtitle {
-      margin-top: 0;
-  }  
-
-
-  .hero__side-label::after {
-      height: clamp(2rem, 10vw, 10rem);        
-  }
-
-
-  .hero__side-text {
-      font-size: 0.6rem;
-      padding-top: 2.5rem;      // distancia hasta la base, esta invertido
-  }
-      */
+/* ========================
+   DESKTOP BASE y NOTEBOOKS GRANDES (1200+)
+======================== */
+/* Por defecto mostramos desktop y escondemos layout mobile */
+.hero-mobile {
+  display: none;
 }
-/* Desktop grande (1920x953) */
-@media (min-width: 1820px) {
-  .hero {
-    background-color: green;
-  }
-  /*
-      .hero__product {
-          //height: 880px;
-          height: 760px;
-          transform: translateX(-27%);
-      }
-      .hero__content {
-          gap: 3rem;       
-          margin-bottom: 300px;
-      }
-      .hero__subtitle {
-          margin-top: 2rem;
-      }  
 
-      .hero__side-label::after {
-          height: clamp(2rem, 8vw, 15rem);
-      }
-
-      .hero__side-text {
-          font-size: 0.8rem;        
-          padding-top: 4rem;   // distancia hasta la base, esta invertido
-      }
-  */
-}
-/* responsive tablet */
-@media (max-width: 768px) {
-  body, p {
-    font-size: 1.2rem;
+/* ========================
+   TABLET PORTRAIT
+======================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-mobile {
+    display: none;
   }
-  /* cambio la imagen */
-  .header {
-    /* Url debo cambiar imagen */
-    background-position-x: 100%;
-    background-position-y: 100%;
+  .hero-desktop {
+    height: auto;
+    min-height: 100vh;
+    background-color: lightseagreen;
   }
   .hero__title {
-    font-size: 2.3rem;
+    font-size: clamp(4.5rem, 9.5vw, 10rem);
   }
   .hero__subtitle {
-    font-size: 1.05rem;
+    font-size: clamp(0.95rem, 2vh, 1.2rem);
   }
-  .hero__cta {
-    /* achico el font-size */
+  /* linea a la derecha del texto */
+  .hero__side-label::after {
+    height: clamp(6rem, 16vh, 14rem);
   }
-  /* bootstrap navbar personalizada ------------------- */
-  .custom-navbar {
-    /* logo se acomoda al centro en tablet y mobile */
+}
+/* ========================
+   TABLET LANDSCAPE
+======================== */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .hero-mobile {
+    display: none;
   }
-  .custom-navbar .navbar-brand {
-    margin-right: auto;
-    margin-left: auto;
+  .hero-desktop {
+    height: auto;
+    min-height: 100vh;
+    background-color: lightcoral;
   }
-  .custom-navbar {
-    /* navbar hamburguesa desplegada con blur */
+  .hero__content {
+    gap: clamp(1rem, 2vh, 2rem);
+  }
+  .hero__subtitle {
+    font-size: clamp(0.75rem, 2.1vh, 1.5rem);
+  }
+  .hero__price {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin-left: 2.5rem;
+  }
+  /* linea a la derecha del texto */
+  .hero__side-label::after {
+    height: clamp(6rem, 16vh, 14rem);
+  }
+}
+/* ===================================
+   MENU HAMBURGUESA tablet/mobile
+==================================== */
+@media (max-width: 991px) {
+  .custom-navbar .container {
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
   }
   .custom-navbar .navbar-collapse {
     position: absolute;
@@ -342,13 +337,16 @@ a {
     left: 0;
     width: 100%;
     padding: 1rem;
-    /* transparencia */
-    background-color: rgba(0, 0, 0, 0.555);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px); /* Safari */
+    /* navbar hamburguesa desplegada con blur */
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari */
+  }
+  .custom-navbar .navbar-nav {
+    gap: clamp(0.5rem, 1vh, 1rem) !important;
   }
   .custom-navbar .navbar-toggler {
-    border: none;
+    margin-right: auto;
   }
   .custom-navbar {
     /* pone las rayitas del menu hamburguesa en blanco */
@@ -356,21 +354,53 @@ a {
   .custom-navbar .navbar-toggler-icon {
     filter: invert(1);
   }
+  .custom-navbar .navbar-brand {
+    margin: 0 auto !important;
+    font-size: clamp(1.5rem, 4vw, 2.8rem) !important;
+    letter-spacing: clamp(4px, 1vw, 12px) !important;
+  }
+  .custom-navbar .nav-icons {
+    margin-left: auto !important;
+  }
+  .custom-navbar {
+    /* ocultar icono carrito */
+  }
+  .custom-navbar .nav-cart {
+    display: none;
+  }
 }
-/* responsive mobile */
-@media (max-width: 390px) {
-  body, p {
-    font-size: 1rem;
+/* ========================
+   MOBILE (0–767)
+======================== */
+@media (max-width: 767px) {
+  .hero-desktop {
+    display: none;
   }
-  .hero__title {
-    /* achico el font-size y agrando espacio para el texto */
-    font-size: 1.8rem;
-    max-width: 70%;
-  }
-  .hero__cta {
-    /* achico el font-size */
-    font-size: 0.8rem;
-  }
+  /*
+      .hero-mobile {
+          position: relative;
+          width: 100%;
+          overflow: hidden;  
+
+          display: grid;
+
+          grid-template-columns: 
+          minmax(0, 1fr)
+          minmax(0, 1fr)
+          minmax(0, 0.5fr);
+
+          grid-template-rows: auto 1fr auto;
+
+          height: 100vh;
+          margin: 0 auto;
+          //background-color: orange;   
+      }   
+
+
+      .hero__content-top-mobile  {
+
+      }
+  */
 }
 
 /*# sourceMappingURL=styles.css.map */

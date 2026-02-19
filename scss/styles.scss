@@ -7,144 +7,119 @@
 @import './layouts/_footer';
 
 
+/* ========================
+   DESKTOP BASE y NOTEBOOKS GRANDES (1200+)
+======================== */
+
+/* Por defecto mostramos desktop y escondemos layout mobile */
+.hero-mobile {
+    display: none;
+}    
 
 
-/* media querys para tablets y celulares --------------------------------------------- */
+/* ========================
+   TABLET PORTRAIT
+======================== */
 
-/* notebook comun (1366x641) */
+//@media (min-width: 768px) and (max-width: 1023px) {
+@include tablet-portrait { 
 
-@media (min-width: 1300px) and (max-width: 1919px) {
+    // escondo layout mobile
+    .hero-mobile {
+        display: none;
+    }   
 
-    .hero {
-        //height: 770px;
-        //height: min(100vh,953px);
-        background-color: brown;
-    }
-    /*
-    .hero__product {
-        height: 600px;
-        transform: translateX(-46%); // mueve la imagen
-    }
-    .hero__content {
-       // gap: 1.2rem;
-        margin-bottom: 270px; //baja la imagen
-    }
-    .hero__subtitle {
-        margin-top: 0;
-    }  
-
-    
-    .hero__side-label::after {
-        height: clamp(2rem, 10vw, 10rem);        
-    }
-
-    
-    .hero__side-text {
-        font-size: 0.6rem;
-        padding-top: 2.5rem;      // distancia hasta la base, esta invertido
-    }
-        */
-}
-
-
-/* Desktop grande (1920x953) */
-
-@media (min-width: 1820px) {
-    .hero {
-        //height: 960px;
-        //height: min(100vh,953px);
-        background-color: green;
-    }
-    /*
-    .hero__product {
-        //height: 880px;
-        height: 760px;
-        transform: translateX(-27%);
-    }
-    .hero__content {
-        gap: 3rem;       
-        margin-bottom: 300px;
-    }
-    .hero__subtitle {
-        margin-top: 2rem;
-    }  
-
-    .hero__side-label::after {
-        height: clamp(2rem, 8vw, 15rem);
-    }
-
-    .hero__side-text {
-        font-size: 0.8rem;        
-        padding-top: 4rem;   // distancia hasta la base, esta invertido
-    }
-*/
-}
-
-
-
-
-
-/* responsive tablet */
-@media (max-width: $tamanioTablet) {
-
-    body, p {
-        font-size: 1.2rem;
-    }
-
-    /* cambio la imagen */
-    .header{    
-        /* Url debo cambiar imagen */
-        background-position-x: 100%;
-        background-position-y: 100%;        
+    .hero-desktop {    
+        height: auto;
+        min-height: 100vh;
+        background-color: lightseagreen;
     }
 
     .hero__title {
-        font-size: 2.3rem;
+        font-size: clamp(4.5rem, 9.5vw, 10rem);
     }
 
     .hero__subtitle {
-        font-size: 1.05rem;
+        font-size: clamp(0.95rem, 2vh, 1.2rem);
+    }  
+
+    /* linea a la derecha del texto */
+    .hero__side-label::after {
+        height: clamp(6rem, 16vh, 14rem);
     }
-  
-    .hero__cta {
-         /* achico el font-size */
+}
+
+/* ========================
+   TABLET LANDSCAPE
+======================== */
+
+//@media (min-width: 1024px) and (max-width: 1199px) {
+@include tablet-landscape {
+
+    // escondo layout mobile
+    .hero-mobile {
+        display: none;
+    }
+
+    .hero-desktop {    
+        height: auto;
+        min-height: 100vh;
+        background-color: lightcoral;
     }        
 
-    /* bootstrap navbar personalizada ------------------- */
-    .custom-navbar {
-        // a {
-        //     font-size: 0.8rem;
-        //     font-weight: 350 !important;
-        //       color: yellow !important;             
+    .hero__content {
+        gap: clamp(1rem, 2vh, 2rem);  
+    }
 
-        //     &:hover {
-        //         text-decoration: none;
-        //         font-weight: 600 !important;    
-        //         color: blue !important;             
-        //     }
-        // }        
+    .hero__subtitle {
+        font-size: clamp(0.75rem, 2.1vh, 1.5rem)        
+    }
+
+    .hero__price {
+        font-size: clamp(1.5rem, 4vw, 3rem); 
+        margin-left: 2.5rem;
+    }
+
+    /* linea a la derecha del texto */
+    .hero__side-label::after {
+        height: clamp(6rem, 16vh, 14rem);
+    }
+}
+
+/* ===================================
+   MENU HAMBURGUESA tablet/mobile
+==================================== */
+
+// menu hamburguesa desplegado, navbar-expand-lg cambia en 992px.
+//@media (max-width: 991px) {
+@include lg-down {
     
-        /* logo se acomoda al centro en tablet y mobile */
-        .navbar-brand {
-        margin-right: auto;
-        margin-left: auto;
+    .custom-navbar {
+
+        .container {
+            padding-left: clamp(1rem, 3vw, 2rem);
+            padding-right: clamp(1rem, 3vw, 2rem);            
         }
 
-        /* navbar hamburguesa desplegada con blur */
         .navbar-collapse {
             position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
-            padding: 1rem;        
-            /* transparencia */
-            background-color: rgba(0, 0, 0, 0.555);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px); /* Safari */
-        } 
+            padding: 1rem;
+            /* navbar hamburguesa desplegada con blur */    
+            background-color: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px); /* Safari */        
+        }
+
+        .navbar-nav {
+            // cambio espacio entre links
+            gap: clamp(0.5rem, 1vh, 1rem) !important;
+        }    
 
         .navbar-toggler {
-            border: none;
+            margin-right: auto;
         }
 
         /* pone las rayitas del menu hamburguesa en blanco */
@@ -152,26 +127,62 @@
             filter: invert(1);
         }
 
+        .navbar-brand {
+            margin: 0 auto !important;
+            font-size: clamp(1.5rem, 4vw, 2.8rem) !important;
+            letter-spacing: clamp(4px, 1vw, 12px) !important;      
+        }
+
+        .nav-icons {
+            margin-left: auto !important;
+        }
+
+        /* ocultar icono carrito */
+        .nav-cart {        
+            display: none;
+        }
     }
-  
+
 }
 
+/* ========================
+   MOBILE (0–767)
+======================== */
 
-/* responsive mobile */
-@media (max-width: $tamanioMobile) {
+//@media (max-width: 767px) {
+@include mobile {    
 
-    body, p {
-        font-size: 1rem;
+    .body {
+     //   background-color: $color-bg-general;           
     }
 
-    .hero__title {
-        /* achico el font-size y agrando espacio para el texto */
-        font-size: 1.8rem;
-        max-width: 70%;
+    .hero-desktop {
+        display: none;
     }
-    
-    .hero__cta {
-        /* achico el font-size */
-        font-size: 0.8rem;
-    }    
+
+/*
+    .hero-mobile {
+        position: relative;
+        width: 100%;
+        overflow: hidden;  
+        
+        display: grid;
+
+        grid-template-columns: 
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(0, 0.5fr);
+
+        grid-template-rows: auto 1fr auto;
+        
+        height: 100vh;
+        margin: 0 auto;
+        //background-color: orange;   
+    }   
+
+
+    .hero__content-top-mobile  {
+
+    }
+*/
 }

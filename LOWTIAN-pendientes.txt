@@ -1,32 +1,27 @@
 LOWTIAN
 
-CONSULTAS CLIENTE
-* como quiere el hover y link active de navbar en desktop y en mobile?
-* quiere blur cuando se despliegue menu hamburguesa?
-* para tablet alguna definición? que imagen va de fondo? será fondo hamburguesa 
 
-*** TO DO LIST
-Figma 1280x832		
-pantalla 1 1366x768   1366x641    hero 770 -> 641
-pantalla 2 1920*1080  1920x953    hero 960 -> 953
+* aclarar en el mail que el contenedor para que no se achique es el
+mismo sistema que usan marcan premium
+* cambiar la parte de fondo con gradient por fondo negro
+* aclarar que en tablet se dejo a proposito que se corte la imagen porque
+hacerle entrar haria perder impacto visual pero es el cliente quien debe
+decidir
 
-window.innerWidth
-document.querySelector('.hero').offsetHeight
-
-* acomodar iconos 
+** enviar mail
 
 
-* desplegable menu hamburguesa segun definicion, ahora que el hover funcione y fondo que cubra lo demas
+* gradient circulas body en desktop?
+* gradient circular abajo quizas debajo del rectangulo
+
 * todo lo de mobile
-* navbar hamburguesa llevar a la derecha
 
 * utilizar mixins en base a BA
-* chequear anidado de custom-navbar en css y reutilizacion (pendiente en mi marca)
 * chequear espacios Figma y realidad
 * modificar cabecera (favicon, opengraph,title)
 * ojo con alts
-
 * cambiar todo lo que sea px a rem
+
 
 
 * COMO HACER LOS GRADIENTS

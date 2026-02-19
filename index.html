@@ -22,15 +22,15 @@
     <header class="header" id="home">
 
         <!-- Barra navegacion pegada arriba y ocupando todo el ancho -->      
-        <nav class="navbar navbar-expand-lg position-fixed mt-4 w-100 z-1 custom-navbar">
+        <nav class="navbar navbar-expand-lg position-fixed mt-4 w-100 custom-navbar">
             <div class="container">
-
-                <a class="navbar-brand" href="./index.html">LOWTIAN</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 
+                <a class="navbar-brand" href="./index.html">LOWTIAN</a>
+
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav gap-4 mb-lg-0">
 
@@ -43,24 +43,26 @@
                 </div>     
                 
                 <!-- iconos derecha -->                 
-                <div class="nav-icons d-none d-lg-flex">
+                <!-- <div class="nav-icons d-none d-lg-flex"> -->
+                <div class="nav-icons d-flex">
 
-                    <a href="#" class="nav-icon">
+                    <a href="#" class="nav-icon nav-user">
                         <img src="./img/userIcon.svg" alt="Icono usuario">
                     </a>
-                    <a href="#" class="nav-icon">
+                    <a href="#" class="nav-icon nav-cart">
                         <img src="./img/cartIcon.svg" alt="Icono carrito de compras">
                     </a>
                 </div>
             </div>
         </nav>
              
-        <section class="hero">
+        <section class="hero-desktop">
+            
             <!-- Contenido izquierda -->
             <div class="hero__content">
                 <h1 class="hero__title">NIKE BALACLAVA</h1>
                 <p class="hero__subtitle">
-                    Icy cold temperatures are no match for the
+                    Icy cold temperatures are no match for the 
                     Nike Pro Hyperwarm Balaclava Hood. Featuring
                     breathable and cozy material, this topper is
                     ideal for chilly practices and games.
@@ -80,6 +82,31 @@
             <div class="hero__side-label">
                 <span class="hero__side-text">NEW IN</span>
             </div>  
+
+        </section>
+
+        <section class="hero-mobile">
+            <!-- titulo superior -->
+            <div class="hero__content-top-mobile">
+                <h2 class="hero__title-mobile">NIKE</h2>                
+            </div>
+
+             <!-- imagen y titulo inferior -->
+            <div class="hero__content-center-mobile">
+                <div>
+                    <img src="./img/heroImageMobile.png"
+                        class="hero__product-mobile"
+                        alt="Campera blanca con capucha">
+                </div>                
+
+                <h2 class="hero__title-mobile">WIND <br> BREAKER</h2>          
+            </div>              
+
+            <!-- Etiqueta lateral -->
+            <div class="hero__side-label">
+                <span class="hero__side-text">NEW IN</span>
+            </div>  
+
 
         </section>
 

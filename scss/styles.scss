@@ -2,7 +2,9 @@
 @import './utilities/_variables';
 @import './utilities/_mixins';
 
-@import './layouts/_header';
+@import './layouts/_reset';
+@import './layouts/_header-desktop';
+@import './layouts/_header-mobile';
 @import './layouts/_main';
 @import './layouts/_footer';
 
@@ -97,8 +99,8 @@
     .custom-navbar {
 
         .container {
-            padding-left: clamp(1rem, 3vw, 2rem);
-            padding-right: clamp(1rem, 3vw, 2rem);            
+            padding-left: clamp(1rem, 2vw, 2rem);
+            padding-right: clamp(1rem, 2vw, 2rem);     
         }
 
         .navbar-collapse {
@@ -118,13 +120,26 @@
             gap: clamp(0.5rem, 1vh, 1rem) !important;
         }    
 
+        // boton menu hamburguesa sin borde
         .navbar-toggler {
             margin-right: auto;
+            padding: 0.2rem 0.3rem !important;
+            border: none !important;
+            outline: none !important;
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            box-shadow: none !important;
+            outline: none !important;
         }
 
         /* pone las rayitas del menu hamburguesa en blanco */
         .navbar-toggler-icon {
-            filter: invert(1);
+            filter: invert(1);        
+            width: clamp(1.3rem, 8vw, 2rem);
+            height: clamp(1.3rem, 8vw, 2rem);
+
         }
 
         .navbar-brand {

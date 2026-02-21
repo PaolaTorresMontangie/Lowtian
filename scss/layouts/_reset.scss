@@ -1,0 +1,38 @@
+
+/* reset y generales ********************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fontPrimary;
+    color: $color-text-main;
+    scroll-behavior: smooth;
+
+    background-color: $color-bg-general;
+}
+
+p {    
+    font-family: $fontPrimary;
+    color: $color-text-main;
+}
+
+a {
+    text-decoration: none;
+    color: $color-text-main;
+}
+
+.btn {
+    // boton base
+    color: $color-text-main;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    font-weight: 400;
+    border: 1.83px solid $color-text-main;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 0;
+    padding: 0.43rem 1.25rem; /* espacio dentro del boton, alto ancho */
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}

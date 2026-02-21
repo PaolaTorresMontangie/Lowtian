@@ -1,4 +1,15 @@
 @charset "UTF-8";
+.hero-mobile__image-wrapper, .custom-navbar .nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-mobile__title-bottom h2, .hero-mobile__title-top h2, .hero__title {
+  font-weight: 700;
+  margin: 0;
+}
+
 /* ===========================
    Fuentes
 =========================== */
@@ -28,7 +39,12 @@ table landscape 1024x1180
 
 **************************
 
-Figma Mobile 320x568
+Figma Mobile   320x568
+Nexus 5        360*640
+IPhone SE      375x812
+Iphone X       375*812
+
+**************************
 
 */
 /* forma y posicion del nucleo izquierda y arriba */
@@ -40,7 +56,6 @@ Figma Mobile 320x568
    Breakpoint Mixins
 ====================== */
 /* Bootstrap lg-down */
-/****** header layout *****************************************/
 /* reset y generales ********************/
 * {
   margin: 0;
@@ -67,13 +82,13 @@ a {
 
 .btn {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   font-weight: 400;
   border: 1.83px solid #fff;
   display: inline-block;
   text-decoration: none;
   border-radius: 0;
-  padding: 0.43rem 1.25rem;
+  padding: 0.43rem 1.25rem; /* espacio dentro del boton, alto ancho */
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -132,7 +147,7 @@ a {
 }
 
 .hero__product {
-  height: 80%;
+  height: clamp(500px, 75vh, 900px);
   width: auto;
   z-index: 2;
 }
@@ -140,7 +155,6 @@ a {
 /* titulo grande */
 .hero__title {
   color: #fff;
-  font-weight: 700;
   font-size: clamp(5.5rem, 9.7vw, 10rem);
   line-height: 1;
   white-space: nowrap;
@@ -216,7 +230,7 @@ a {
   z-index: 3 !important;
 }
 .custom-navbar .container {
-  max-width: 1600px;
+  max-width: 1660px;
   margin: 0 auto;
   padding-left: clamp(2rem, 3vw, 6rem);
   padding-right: clamp(2rem, 3vw, 6rem);
@@ -258,9 +272,6 @@ a {
   gap: clamp(0.6rem, 1vw, 1.2rem);
 }
 .custom-navbar .nav-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .custom-navbar .nav-icon img {
@@ -280,7 +291,7 @@ a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: #161616;
   /* texto vertical mas linea */
@@ -303,9 +314,9 @@ a {
   /* texto */
 }
 .hero-mobile .hero__side-text {
-  font-size: clamp(0.5rem, 1.8vh, 1rem);
+  font-size: clamp(0.5rem, 3.8vw, 1rem);
   letter-spacing: 0.2em;
-  padding-top: clamp(1.5rem, 5vh, 2rem);
+  padding-top: clamp(0.8rem, 5vh, 1.1rem);
 }
 
 /* degrade de fondo mobile */
@@ -314,32 +325,16 @@ a {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(ellipse at 17% 20%, rgb(229, 223, 204), rgba(229, 223, 204, 0.411) 25%, rgba(229, 223, 204, 0.08) 50%, transparent 70%), radial-gradient(circle at 10% 85%, rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.6) 7%, rgba(0, 0, 0, 0.3) 15%, transparent 30%), radial-gradient(circle at 45% 70%, rgba(229, 223, 204, 0.342), rgba(229, 223, 204, 0.267) 10%, rgba(229, 223, 204, 0.08) 25%, transparent 45%), radial-gradient(ellipse at 58% 22%, rgba(60, 60, 60, 0.7), rgba(60, 60, 60, 0.35) 35%, rgba(60, 60, 60, 0.15) 55%, transparent 75%), #161616;
-  /*
-    background:
-      radial-gradient(
-        ellipse at 50% 15%,
-        rgba(229, 223, 204, 0.9),
-        rgba(229, 223, 204, 0.3) 35%,
-        transparent 70%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(0,0,0,0) 60%,
-        rgba(0,0,0,0.7) 100%
-      );
-  */
+  background: radial-gradient(ellipse 60% 40% at 20% 8%, rgba(229, 223, 204, 0.6) 0%, rgba(229, 223, 204, 0.35) 35%, rgba(229, 223, 204, 0.1) 60%, transparent 80%), radial-gradient(circle at 0% 95%, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 20%, transparent 55%), radial-gradient(ellipse 140% 100% at 12% 52%, rgba(229, 223, 204, 0.9) 0%, rgba(229, 223, 204, 0.5) 30%, rgba(229, 223, 204, 0.2) 55%, transparent 75%), #161616;
 }
 
 /* Imagen centrada real */
 .hero-mobile__image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: clamp(4rem, 17vh, 8rem);
 }
 
 .hero__product-mobile {
-  height: clamp(15rem, 58vh, 25rem);
+  height: clamp(220px, 58vh, 470px);
   width: auto;
   display: block;
   z-index: 2;
@@ -348,27 +343,27 @@ a {
 /* Texto superior (NIKE) */
 .hero-mobile__title-top {
   position: absolute;
-  top: clamp(7rem, 24vh, 10rem);
-  right: clamp(1rem, 3.5vh, 1.5rem);
+  top: clamp(6rem, 20vh, 10rem);
+  left: 50%;
+  transform: translateX(35%);
   z-index: 1;
 }
 .hero-mobile__title-top h2 {
   font-size: clamp(2.6rem, 11vw, 3.2em);
-  font-weight: 700;
   margin: 0;
 }
 
 /* Texto inferior (WIND BREAKER) */
 .hero-mobile__title-bottom {
   position: absolute;
-  bottom: 10%;
-  left: clamp(10rem, 60vw, 15rem);
-  transform: translateX(-50%);
+  bottom: clamp(4rem, 14vh, 8rem);
+  left: 50%;
+  transform: translateX(-36%);
+  text-align: left;
   z-index: 1;
 }
 .hero-mobile__title-bottom h2 {
   font-size: clamp(2.6rem, 11vw, 3.2em);
-  font-weight: 700;
   margin: 0;
   line-height: 1.05;
 }
@@ -439,8 +434,8 @@ a {
 ==================================== */
 @media (max-width: 991px) {
   .custom-navbar .container {
-    padding-left: clamp(1rem, 3vw, 2rem);
-    padding-right: clamp(1rem, 3vw, 2rem);
+    padding-left: clamp(1rem, 2vw, 2rem);
+    padding-right: clamp(1rem, 2vw, 2rem);
   }
   .custom-navbar .navbar-collapse {
     position: absolute;
@@ -458,12 +453,22 @@ a {
   }
   .custom-navbar .navbar-toggler {
     margin-right: auto;
+    padding: 0.2rem 0.3rem !important;
+    border: none !important;
+    outline: none !important;
+  }
+  .custom-navbar .navbar-toggler:focus,
+  .custom-navbar .navbar-toggler:active {
+    box-shadow: none !important;
+    outline: none !important;
   }
   .custom-navbar {
     /* pone las rayitas del menu hamburguesa en blanco */
   }
   .custom-navbar .navbar-toggler-icon {
     filter: invert(1);
+    width: clamp(1.3rem, 8vw, 2rem);
+    height: clamp(1.3rem, 8vw, 2rem);
   }
   .custom-navbar .navbar-brand {
     margin: 0 auto !important;

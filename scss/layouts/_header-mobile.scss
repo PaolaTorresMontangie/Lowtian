@@ -1,0 +1,136 @@
+/****** comienzo header layout MOBILE *****************************************/
+
+.hero-mobile {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: $color-bg-general; // base oscuro
+
+    /* texto vertical mas linea */    
+    .hero__side-label {
+        position: absolute;
+        bottom: 0; // para que toque el piso
+
+        left: clamp(1rem, 6vw, 2rem);
+        gap: clamp(0.2rem, 1vw, 0.5rem);      
+
+        display: flex;
+        align-items: flex-end;
+
+        // más larga en mobile
+        &::after {
+            content: "";
+            width: 1px;
+            height: clamp(4rem, 16vh, 6rem);
+            background: $color-text-main;
+        }
+    }
+
+    /* texto */
+    .hero__side-text {
+        font-size: clamp(0.5rem, 3.8vw, 1rem);
+        letter-spacing: 0.2em;
+        // distancia hasta la base, esta invertido
+        padding-top: clamp(0.8rem, 5vh, 1.1rem); // Iphone X 1rem,  375x667 1.2 rem,
+    }
+}    
+
+/* degrade de fondo mobile */
+.hero-mobile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background:
+  
+    /* luz arriba izquierda MENU */    
+    radial-gradient(
+        ellipse 60% 40% at 20% 8%,
+        rgba(229, 223, 204, 0.6) 0%,
+        rgba(229, 223, 204, 0.35) 35%,
+        rgba(229, 223, 204, 0.1) 60%,
+        transparent 80%
+    ),
+
+    /* Sombra inferior */
+    radial-gradient(
+        circle at 0% 95%,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.5) 20%,
+        transparent 55%
+    ),  
+
+    /* Luz principal CENTRAL */
+    radial-gradient(
+        ellipse 140% 100% at 12% 52%,
+        //blue 0%,
+        rgba(229,223,204,0.9) 0%,
+        rgba(229,223,204,0.5) 30%,
+        rgba(229,223,204,0.2) 55%,
+        transparent 75%
+    ),
+
+    $color-bg-general;   
+}
+
+/* Imagen centrada real */
+.hero-mobile__image-wrapper {
+    @extend %flex-center;
+
+    // baja la imagen
+    padding-top: clamp(4rem, 17vh, 8rem);
+}
+
+.hero__product-mobile {
+    height: clamp(220px, 58vh, 470px);  // 58% Figma
+    width: auto;
+    
+    display: block;
+    z-index: 2; // delante del texto
+}
+
+/* Texto superior (NIKE) */
+.hero-mobile__title-top {
+    position: absolute;
+    top: clamp(6rem, 20vh, 10rem);
+
+    // lo llevo al centro y luego lo muevo a la derecha
+    left: 50%; 
+    transform: translateX(35%); // mayoria 35%, IphoneX 40%
+
+    z-index: 1;
+
+    h2 {
+        @extend %title-bold;        
+        font-size: clamp(2.6rem, 11vw, 3.2em);
+        margin: 0;
+    }
+}
+
+/* Texto inferior (WIND BREAKER) */
+.hero-mobile__title-bottom {
+    position: absolute;
+
+    bottom: clamp(4rem, 14vh, 8rem);    
+    left: 50%;
+    transform: translateX(-36%);
+    text-align: left;    
+
+    z-index: 1;  // detras de la imagen
+
+    h2 {
+        font-size: clamp(2.6rem, 11vw, 3.2em);
+        @extend %title-bold;        
+        margin: 0;
+        line-height: 1.05;
+    }
+}    
+
+/****** fin header layout MOBILE *****************************************/

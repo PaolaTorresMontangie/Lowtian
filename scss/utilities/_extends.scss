@@ -1,6 +1,10 @@
-%btnBase {
-    display: inline-block;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%title-bold {
+  font-weight: 700;
+  margin: 0;
 }

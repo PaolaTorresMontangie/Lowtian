@@ -1,72 +1,8 @@
 LOWTIAN
 
-imagen 224x331
-body 320*568
+ver tc galicia cuotas.
+
+*(chequear espacios Figma y realidad)
+*(modificar cabecera (favicon, opengraph,title))
 
 
-
-* poner clamp en todos lados mobile
-* chequera posicion imagen y titulos
-* corregir gradients
-* achicar link hamburguesa
-* controlar tamaño brand hamburguesa
-* ver otros tamaños de cel
-* cambiar icono user por cart
-
-* ojo con alts
-* cambiar todo lo que sea px a rem
-* buscar colores con # y cambiarlos por variables
-* buscar clases huérfanas y no usadas
-
-* utilizar mixins en base a BA
-* chequear espacios Figma y realidad
-* modificar cabecera (favicon, opengraph,title)
-
-
-* desktop muy anchos, posibilidad de agregar un after al header para que continuen 
-los grdients al borde, se ve bastante bien pero se ve raro
-el corte de la imagen del producto. 1) que el producto no se corte y "salga del hero"
-2) que el gradient del header sea mas oscuro para que se vea el corte pero no sea tan abrupto
-* gradient circular abajo quizas debajo del rectangulo
-
-
-* COMO HACER LOS GRADIENTS
-https://www.google.com/search?q=html+y+css+imagen+de+hero+con+varios+circulos+con+gradients&oq=html+y+css+imagen+de+hero+con+varios+circulos+con+gradients&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABjvBTIKCAIQABiABBiiBDIHCAMQABjvBTIHCAQQABjvBdIBCTIxODEyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8
-
-**** MENSAJE PARA LETI
-
-Hola Leti. Quería decirte que me encantó conocerte y si no te molesta, me gustaría seguir en contacto con vos. Se quie debo actualizar en lo tecnológico para volver a trabajar freelance pero estoy convencida de que mi experiencia de 15 años en el rubro de sistemas más mis años como emprendedora (donde el rol de vendedora era muy importante) serán un gran activo y me ayudarán a volver al ruedo nuevamente. Me gustaría poder mostrarme los proyectos en los que voy trabajando y si tenés ganas, hacerme una devolución.*
-
-
-
-
-/*
-en esta fase 1, único html de inicio con links a otras páginas o secciones dentro de la misma página. 
-Barra de navegación con links "Inicio, Remeras, Buzos, Pantalones, Zapatillas" responsive (se adapta a distintos dispositivos).
-Diseño completo que se adapta a distintos dispositivos. Imagen de fondo y textos cambian según el dispositivo.
-*/
-
-/*
-landing page / home, página única con navbar de bootstrap responsive (osea,
-que se adapta a distintos dispositivos) en letras blancas, fondo oscuro, tipografias blancas, 
-degrades de gris a negro/transparente en varias posiciones.
-algunos textos y linea en la parte inferior.
-
-En la versión Mobile: navbar hamburguesa a la izquierda
-con botón blanco, logo de LOWTIAN en letras centrado en blanco, icono carrito de compras blanco 
-a la izquierda, campera blanca que contrasta con el fondo en el medio, texto blanco grande "NIKE" a
-la derecha y arriba de la campera, texto "WIND BREAKER" abajo de la campera.
-Varios gradients de color blanco a negro/transparente
-Parte inferior, linea vertical en blanco a la izquierda y texto volteado 90% en blanco "NEW IN".
-
-En la veresión Desktop: 
-logo de LOWTIAN en letras a la izquierda, menu con links "Inicio, Remeras, Buzos, Pantalones, Zapatillas" en el centro,
-a la izquierda superior icono blanco de "perfil" e ícono blanco de "carrito de compras".
-campera blanca que contrasta con el fondo a la derecha, texto blanco grande
-"NIKE BALACLAVA" arriba y por detrás de la campera, texto descriptivo del producto en
-blanco y letras más pequeñas, precio del producto en blanco y botón CTA (llamado
-a la acción) con texto "Añadir al carrito" en blanco, con fondo negro y borde blanco fino cuadrado 
-sin bordes redondeados.
-Varios gradients de color blanco a negro/transparente
-Parte inferior, linea vertical en blanco a la izquierda y texto volteado 90% en blanco "NEW IN".
-*/
